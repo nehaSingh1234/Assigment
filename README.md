@@ -51,6 +51,7 @@ REPOSITORY                    TAG                 IMAGE ID            CREATED   
 assignment                    latest              18a65c736bd7        2 minutes ago       121MB
 
   6. Now execute below commands for running the image.
+  
   $ docker run -p 80:8080 assignment --name runningversion
   
   You should receive output like below-
@@ -72,5 +73,7 @@ assignment                    latest              18a65c736bd7        2 minutes 
 2020-11-12 23:01:00.935  INFO 1 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
 2020-11-12 23:01:01.459  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
 2020-11-12 23:01:01.527  INFO 1 --- [           main] A.Assignment.AssignmentApplication       : Started AssignmentApplication in 6.611 seconds (JVM running for 7.988)
-8. Now access the URL "http://localhost/units/si?units=degree/minute"
+
+
+7. Now access the URL "http://localhost/units/si?units=degree/minute"
 
