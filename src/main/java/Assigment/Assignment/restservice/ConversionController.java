@@ -24,8 +24,15 @@ public class ConversionController {
     @GetMapping("/units/si")
     public Conversion conversion(@RequestParam(value = "units", defaultValue = "Long") String units) {
         String[] parsedData = getConversionSet(units);
-        String firstUnit = parsedData[0];
-        String secondUnit = parsedData[1];
+        String firstUnit="";
+        String secondUnit="";
+        if(parsedData != null && parsedData.length > 2) {
+            firstUnit = parsedData[0];
+            secondUnit = parsedData[1];
+        }
+        else{
+            return new Conversion("Not valid", "Not valid");
+        }
         String symbol = parsedData[2];
         String multiplicationFac = getMultiplicationFactor(parsedData,map);
         ConversionData temp = map.getOrDefault(firstUnit,new ConversionData("default","default","0","default"));
@@ -131,7 +138,7 @@ public class ConversionController {
                     secondUnit = parseInputSec.toString();
                 }
             }
-            if(k < units.length() && (units.charAt(k) == '+') || units.charAt(k)==' ')
+            if(k < units.length() && (units.charAt(k) == '+'))
             {
                 symbol ="+";
                 while(k < units.length()-1 && Character.isLetter(units.charAt(++k))){
@@ -148,7 +155,11 @@ public class ConversionController {
                 }
             }
         }
+        if(!firstUnit.isEmpty() && !secondUnit.isEmpty() && !symbol.isEmpty())
         return new String[]{firstUnit,secondUnit,symbol};
+        else{
+         return null;
+        }
     }
 
     public String getMultiplicationFactor(String[] units, Map<String,ConversionData> map)
