@@ -4,6 +4,7 @@ Make sure maven is installed in your laptop.
 Use below command to build the code-
   1. From <>/Assigment folder run below command-
   2. $./mvnw clean install
+  
 You should get below message after code is compiled successfully.
 
 [INFO] Installing /Users/nehasingh/Documents/MyAssignment/Assignment/Assigment/pom.xml to /Users/nehasingh/.m2/repository/Assigment/Assignment/0.0.1-SNAPSHOT/Assignment-0.0.1-SNAPSHOT.pom
@@ -18,16 +19,19 @@ You should get below message after code is compiled successfully.
   4. An artifact named as "Assignment-0.0.1-SNAPSHOT.jar" will be created in Assigment/target folder
   5. You can execute this jar file directly for running the application or use below steps for running on docker.
   
-  Steps to run jar on docker container-
+  
+
+Steps to run jar on docker container-
   1. Make sure docker is installed
   2. Open a terminal or command prompt
   3. Go to assignment folder <<>/Assignment/Assigment>
   4. Run below command-
+  
   $docker build -t assignment .
   
   You should see output like below:
   
-  $ docker build -t assignment .
+
 Sending build context to Docker daemon  16.79MB
 Step 1/4 : FROM openjdk:8-jdk-alpine
  ---> a3562aa0b991
@@ -44,11 +48,16 @@ Removing intermediate container b28bdcfdc8a2
 Successfully built 18a65c736bd7
 Successfully tagged assignment:latest
 
+
+
   5. Once docker image is built, check the image with command- 
-  docker images
  $ docker images
+
+
 REPOSITORY                    TAG                 IMAGE ID            CREATED             SIZE
 assignment                    latest              18a65c736bd7        2 minutes ago       121MB
+
+
 
   6. Now execute below commands for running the image.
   
