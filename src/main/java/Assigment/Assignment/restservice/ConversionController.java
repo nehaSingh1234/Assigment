@@ -12,7 +12,6 @@ import java.util.*;
 @RestController
 public class ConversionController {
 
-    //private static final String template = "Hello, %s!";
     private String unit_name = "";
     HashMap<String,ConversionData> map;
     public ConversionController()
