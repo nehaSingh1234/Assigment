@@ -1,7 +1,7 @@
 package Assigment.Assignment.restservice;
 /*Author-Neha
   Input- Read the incoming request, parses the input & gets the unit name and conversion factor
-  Output- returns jason object with unit_name and multiplication_factor value
+  Output- returns json object with unit_name and multiplication_factor value
   Purpose- Reads the incoming requests, parses inputs, converts data as per provided input and returns converted values
 * */
 import Assigment.Assignment.restservice.conversionData.*;
